@@ -1,2 +1,5 @@
 env
 .DS_Store
+accounts/*/*.jpg
+accounts/*/*.png
+
