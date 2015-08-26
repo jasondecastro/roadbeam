@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Login, registration forms" name="description">
+    <meta content="Seong Lee" name="author">
+
+    <title>Roadbeam</title><!-- Stylesheets -->
+    <link href="http://seonglee.com/theme/authenty-v1.2/css/bootstrap.css" rel=
+    "stylesheet">
+    <link href="http://seonglee.com/theme/authenty-v1.2/css/animation.css" rel=
+    "stylesheet">
+    <link href=
+    "http://seonglee.com/theme/authenty-v1.2/css/checkbox/orange.css" rel=
+    "stylesheet">
+    <link href="http://seonglee.com/theme/authenty-v1.2/css/preview.css" rel=
+    "stylesheet">
+    <link href="http://seonglee.com/theme/authenty-v1.2/css/authenty.css" rel=
+    "stylesheet"><!-- Font Awesome CDN -->
+    <link href=
+    "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    rel="stylesheet"><!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300'
+    rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+    rel='stylesheet' type='text/css'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <nav id="navigation_menu">
+        <ul class="clearfix">
+            <li>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="authenty password-recovery" id="password_recovery">
+        <div class="section-content">
+            <div class="wrap">
+                <div class="container">
+                    <div class="form-wrap">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3 brand"
+                            data-animation="fadeInUp">
+                                <h2>Roadbeam</h2>
+
+                                <p>Show the world what you're really capable
+                                of.</p>
+                            </div>
+
+                            <div class="col-sm-1 hidden-xs">
+                                <div class="horizontal-divider"></div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-8 main"
+                            data-animation="fadeInLeft" data-animation-delay=
+                            ".5s">
+                                <h2>Your Profile</h2>
+
+                                 {% for message in form.username.errors %}
+                                  <div class="flash">{{ message }}</div>
+                                {% endfor %}
+                                 
+                                {% for message in form.email.errors %}
+                                  <div class="flash">{{ message }}</div>
+                                {% endfor %}
+                                 
+                                {% for message in form.password.errors %}
+                                  <div class="flash">{{ message }}</div>
+                                {% endfor %}
+
+                                <form action="{{ url_for('signup') }}" method=post>
+                                  {{ form.hidden_tag() }}
+
+
+                                    <div class="form-group">
+
+                                      <div class="input-group">
+        {{ form.firstname(placeholder="First name", class="form-control")}}
+    <span class="input-group-btn" style="width:20px;"></span>
+        {{ form.lastname(placeholder="Last name", class="form-control")}} 
+</div>
+                                    
+                                      
+                                      <br>
+                                        {{ form.username(placeholder="Username", class="form-control")}}
+                                        <br>
+                                        {{ form.email(placeholder="Email", class="form-control")}}
+                                        <br>
+                                        {{ form.password(placeholder="Password", class="form-control")}}
+                                        
+                                        
+                                    </div>
+                                   
+                                    <div class="row">
+
+                                        <div class=
+                                        "col-xs-12 col-sm-4 col-sm-offset-8">
+                                            {{ form.submit(class="btn btn-block reset", value="Enter Roadbeam")}}
+                                           
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- js library -->
+    <script src=
+    "http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> <script src=
+"http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script> <script src="js/bootstrap.min.js"></script> <script src=
+"http://seonglee.com/theme/authenty-v1.2/js/jquery.icheck.min.js"></script> <script src=
+"http://seonglee.com/theme/authenty-v1.2/js/waypoints.min.js"></script> <!-- authenty js -->
+     <script src="http://seonglee.com/theme/authenty-v1.2/js/authenty.js"></script> <!-- preview scripts -->
+     <script src=
+    "http://seonglee.com/theme/authenty-v1.2/js/preview/jquery.malihu.PageScroll2id.js"></script> <script src=
+"http://seonglee.com/theme/authenty-v1.2/js/preview/jquery.address-1.6.min.js"></script> <script src=
+"http://seonglee.com/theme/authenty-v1.2/js/preview/scrollTo.min.js"></script> <script src=
+"http://seonglee.com/theme/authenty-v1.2/js/preview/init.js"></script> <!-- preview scripts -->
+     <script>
+        (function($) {
+                
+                // get full window size
+                $(window).on('load resize', function(){
+                    var w = $(window).width();
+                    var h = $(window).height();
+
+                    $('section').height(h);
+                });     
+
+                // scrollTo plugin
+                $('#signup_from_1').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+                $('#forgot_from_1').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+                $('#signup_from_2').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+                $('#forgot_from_2').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+                $('#forgot_from_3').scrollTo({ easing: 'easeInOutQuint', speed: 1500 });
+                
+                
+                // set focus on input
+                var firstInput = $('section').find('input[type=text], input[type=email]').filter(':visible:first');
+        
+                if (firstInput != null) {
+            firstInput.focus();
+        }
+                
+                $('section').waypoint(function (direction) {
+                    var target = $(this).find('input[type=text], input[type=email]').filter(':visible:first');
+                    target.focus();
+                }, {
+              offset: 300
+          }).waypoint(function (direction) {
+                    var target = $(this).find('input[type=text], input[type=email]').filter(':visible:first');
+                target.focus();
+          }, {
+              offset: -400
+          });
+                
+                
+                // animation handler
+                $('[data-animation-delay]').each(function () {
+              var animationDelay = $(this).data("animation-delay");
+              $(this).css({
+                  "-webkit-animation-delay": animationDelay,
+                  "-moz-animation-delay": animationDelay,
+                  "-o-animation-delay": animationDelay,
+                  "-ms-animation-delay": animationDelay,
+                  "animation-delay": animationDelay
+              });
+          });
+                
+          $('[data-animation]').waypoint(function (direction) {
+              if (direction == "down") {
+                  $(this).addClass("animated " + $(this).data("animation"));
+              }
+          }, {
+              offset: '90%'
+          }).waypoint(function (direction) {
+              if (direction == "up") {
+                  $(this).removeClass("animated " + $(this).data("animation"));
+              }
+          }, {
+              offset: '100%'
+          });
+            
+            })(jQuery);
+    </script>
+</body>
+</html>

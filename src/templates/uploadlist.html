@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+              <h1>Photos</h1>
+              <a class="btn btn-success" data-toggle="modal" href="#myModal">New Upload</a>
+
+
+ <div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Upload Photo</h4>
+      </div>
+      <div class="modal-body">
+
+      <form method=post action="{{ url_for('upload') }}" runat="server" enctype="multipart/form-data">
+         <input name="upload" type="file" accept="image/*">
+                 <img id="output" src="#" alt="your image" />
+                 <script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+
+         <input name="title" type="text">
+         <input name="description" type="textarea">
+         <button type="submit">Upload</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+              {% for u in uploads %}
+              {% if u.publisher == username %}
+     
+                <br>
+                <h2>{{u.title}}</h2>
+                <h3>{{u.description}}</h2>
+                <br>
+                   <img src="{{u.url|replace('static', 'static/accounts/%s' % username)}}"><br>
+                   <a href="{{u.url|replace('static', 'static/accounts/%s' % username)}}">{{u.name}}</a>
+                   <br>
+                <form action="/delete/{{u.id}}" method="POST">
+                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                </form><br>
+      
+              {% endif %}
+              {% endfor %}
+
+{% endblock %}

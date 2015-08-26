@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <form role="form" action="{{ url_for('accountsettings') }}" method=post id="login-form" autocomplete="off">
+                        {{ form.hidden_tag() }}
+                        
+                        <div class="form-group">
+                            {{ form.twitter(placeholder="Twitter handler (optional)", class="form-control", value=twitter )}}
+                            <label for="email" class="sr-only">Username</label>
+                        </div>
+                         <div class="form-group">
+                            {{ form.instagram(placeholder="Instagram username (optional)", class="form-control", value=instagram)}}
+                            <label for="email" class="sr-only">Username</label>
+                        </div>
+                        <div class="form-group">
+                            {{ form.github(placeholder="Github username (optional)", class="form-control", value=github)}}
+                            <label for="email" class="sr-only">Username</label>
+                        </div>
+                        <div class="form-group">
+                            {{ form.location(placeholder="Location (optional)", class="form-control", value=location)}}
+                            <label for="email" class="sr-only">Email</label>
+                        </div>
+                        <div class="form-group">
+                            {{ form.bio(placeholder="How are you feeling right now? (optional)", class="form-control", value=bio)}}
+                            <label for="key" class="sr-only">Password</label>
+                        </div>
+                        
+                        {{ form.submit(id="btn-login", class="btn btn-custom btn-lg btn-block", value="Continue")}}
+                      
+                    </form>
+
+{% endblock %}

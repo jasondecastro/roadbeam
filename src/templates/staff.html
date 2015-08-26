@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% for staff in staff_members %}
+	<div class="jumbo" style="display: inline-block; width: 250px;">
+		<h2>{{staff.username}}</h2>
+		<center><img src="http://www.habbo.com/habbo-imaging/avatarimage?figure={{staff.figure}}&action=wav&direction=4&head_direction=3&gesture=sml&size=l"></center>
+	</div>
+{% endfor %}
+
+
+{% endblock %}

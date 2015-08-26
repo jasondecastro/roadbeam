@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Login &middot; Application theme &middot; Official Bootstrap Themes
+      
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="http://bootstrap-themes.github.io/application/assets/css/toolkit.css" rel="stylesheet">
+    
+    <link href="http://bootstrap-themes.github.io/application/assets/css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+
+      .close {
+        float: right;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 18px;
+        color: #000000;
+        text-shadow: 0 1px 0 #ffffff;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+      }
+      .close:hover {
+        color: #000000;
+        text-decoration: none;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        cursor: pointer;
+      }
+
+      .alert {
+        padding: 8px 35px 8px 14px;
+        margin-bottom: 18px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        background-color: #fcf8e3;
+        border: 1px solid #fbeed5;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color: #c09853;
+      }
+      .alert-heading {
+        color: inherit;
+      }
+      .alert .close {
+        position: relative;
+        top: -2px;
+        right: -21px;
+        line-height: 18px;
+      }
+      .alert-success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #468847;
+      }
+      .alert-danger,
+      .alert-error {
+        background-color: #f2dede;
+        border-color: #eed3d7;
+        color: #b94a48;
+      }
+      .alert-info {
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+        color: #3a87ad;
+      }
+      .alert-block {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+      .alert-block > p,
+      .alert-block > ul {
+        margin-bottom: 0;
+      }
+      .alert-block p + p {
+        margin-top: 5px;
+      }
+    </style>
+
+  </head>
+
+
+<body>
+  <div class="gc us">
+  <div class="uu">
+    <form role="form" class="alp dj j" action="{{ url_for('signin') }}" method=post autocomplete="off">
+
+      <a href="http://bootstrap-themes.github.io/application/" class="l ama">
+        <img src="http://bootstrap-themes.github.io/application/assets/img/brand.png" alt="brand">
+      </a>
+      {% for message in form.username.errors %}
+        <div class="alert alert-danger">{{ message }}</div>
+      {% endfor %}
+       
+      {% for message in form.password.errors %}
+        <div class="alert alert-danger">{{ message }}</div>
+      {% endfor %}
+
+      {{ form.hidden_tag() }}
+
+      <div class="et">
+        {{ form.username(placeholder="Username", class="form-control")}}
+      </div>
+
+      <div class="et alt">
+        {{ form.password(placeholder="Password", class="form-control")}}
+      </div>
+
+      <div class="ama">
+        {{ form.submit(class="cg fp", value="Log in")}}
+        <a class="cg fm" href="/signup">Sign up</a>
+      </div>
+
+      <footer class="apb">
+        <a href="#" class="dp">Forgot password</a>
+      </footer>
+    </form>
+  </div>
+</div>
+
+
+    <script src="http://bootstrap-themes.github.io/application/assets/js/jquery.min.js"></script>
+    <script src="http://bootstrap-themes.github.io/application/assets/js/chart.js"></script>
+    <script src="http://bootstrap-themes.github.io/application/assets/js/toolkit.js"></script>
+    <script src="http://bootstrap-themes.github.io/application/assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
+  </body>
+</html>
+

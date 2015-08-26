@@ -1,0 +1,10 @@
+
+
+{% for u in uploads %}
+              <img src="{{u.url|replace('static', 'static/accounts/%s' % username)}}">
+              <br>
+              <a href="{{u.url|replace('static', 'static/accounts/%s' % username)}}">{{u.name}}</a>
+              <form action="/delete/{{u.id}}" method="POST">
+              <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+              </form><br>
+              {% endfor %}
