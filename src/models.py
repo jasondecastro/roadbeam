@@ -45,7 +45,8 @@ class User(db.Model):
 		p_verbs = ["eat", "kick", "give", "treat", "meet with", "create", "hack", "configure", "spy on", "retard", "meow on", "flee from", "try to automate", "explode"]
 		infinitives = ["to make a pie.", "for no apparent reason.", "because the sky is green.", "for a disease.", "to be able to make toast explode.", "to know more about archeology."]
 
-		generated_bio = str(random.choice(s_nouns) + random.choice(s_verbs) + random.choice(s_nouns).lower() or random.choice(p_nouns).lower() + random.choice(infinitives))
+		space = ' '
+		generated_bio = str(random.choice(s_nouns) + space + random.choice(s_verbs) + space + random.choice(s_nouns).lower() or random.choice(p_nouns).lower() + space + random.choice(infinitives))
 
 		self.bio = generated_bio
 

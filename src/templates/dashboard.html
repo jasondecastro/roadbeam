@@ -514,7 +514,6 @@
           <form action="" method=post enctype=multipart/form-data>
               <br>
               <button type="button" id="newupload" style="width:96%;" class="cg fx fp eg k js-newMsg">Upload a New Photo</button>
-              <br>
 
               <p><input class="cg fx fp eg k js-newMsg" id="actualupload" type=file name=file style="display:none" />
              <!--  <input type="text" name="title" placeholder="title">
@@ -525,11 +524,15 @@
           <div class="container">
             <div class="row" style="padding:10px;">
                 <div class="col-xs-6" id="imagesection">
+                  <br>
                   <img id="imagepreview" style="width:250px; height:250px; border: 2px solid #2882b5; " src="http://imageslgmr.lazygamer.netdna-cdn.com//2015/08/934732.jpg" />
                 </div>
                 <div class="col-xs-6" id="confirmsection">
-                  <h5>Are you sure you wish?</h5>
-                  <button id="submitupload" class="cg ts fx">Yes, I promise I'm sober</button>
+                  <h5>Are you sure you wish to upload this photo?</h5>
+                  <button id="submitupload" class="cg ts fx">Yes, I promise I'm completely sober</button>
+                  <br><br>
+                  <button class="cg ts fx">On second thought... maybe later?</button>
+
                 </div>
             </div>
           </div>

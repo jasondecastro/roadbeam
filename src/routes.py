@@ -200,7 +200,9 @@ def dashboard():
     return redirect(url_for('signin'))
 
   user = User.query.filter_by(username = session['username']).first()
-  upload_folder = '/Users/Bryans-MacBook-Pro/Desktop/Development/Roadbeam/src/static/accounts/%s' % session['username']
+  uploads = Upload.query.filter_by(publisher=session['username'])
+
+  upload_folder = '/Users/developeraccount/Desktop/roadbeam/src/static/accounts/%s' % session['username']
 
   if user is None:
     return redirect(url_for('signin'))
@@ -231,7 +233,7 @@ def dashboard():
           return redirect(url_for('dashboard'))
 
 
-    return render_template('dashboard.html', bio=bio, location=location,
+    return render_template('dashboard.html', bio=bio, uploads=uploads, location=location,
                             github=github, instagram=instagram, username=username, firstname=firstname,
                             lastname=lastname, figure=figure, following=following,
                             followers=followers, twitter=twitter,
