@@ -15,7 +15,7 @@ def allowed_file(filename):
 
 @app.route("/upload", methods=['GET', 'POST'])
 def upload():
-    upload_folder = '/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s' % session['username']
+    upload_folder = '/Users/Bryans-MacBook-Pro/Desktop/Development/Roadbeam/src/static/accounts/%s' % session['username']
     if request.method == 'POST':
         file = request.files['file']
         if file and allowed_file(file.filename.lower()):
@@ -38,7 +38,7 @@ def upload():
     <p>%s</p>
     """ % "<br>".join(os.listdir(upload_folder,))
 
-@app.route('/delete/<int:id>', methods=['POST'])
+@app.route('/delete/<int:id>', methods=['POST', 'GET'])
 def remove(id):
     """Delete an uploaded file."""
     upload = Upload.query.get_or_404(id)
@@ -48,7 +48,7 @@ def remove(id):
         db.session.commit()
     else:
       return 'you do not have right perms'
-      
+
     return redirect(url_for('dashboard'))
 
 @app.route("/<username>/gallery")
@@ -76,13 +76,13 @@ def accountsettings():
   form = CompleteProfileForm()
 
   user = User.query.filter_by(username = session['username']).first()
-  
+
   if request.method == 'POST':
     if form.validate() == False:
       return render_template('accountsettings.html', form=form)
     else:
-      if form.twitter.data >= 1: 
-        user.twitter = form.twitter.data 
+      if form.twitter.data >= 1:
+        user.twitter = form.twitter.data
         db.session.commit()
       if form.instagram.data >= 1:
         user.instagram = form.instagram.data
@@ -118,9 +118,10 @@ def accountsettings():
       bio = user.bio
       location = user.location
 
-      
+
+
       return render_template('accountsettings.html', form=form, bio=bio, location=location,
-                              github=github, instagram=instagram, username=username, firstname=firstname, 
+                              github=github, instagram=instagram, username=username, firstname=firstname,
                               lastname=lastname, figure=figure, following=following,
                               followers=followers, twitter=twitter,
                               appreciations=appreciations)
@@ -151,9 +152,9 @@ def accountdetails():
     bio = user.bio
     location = user.location
 
-    
+
     return render_template('accountdetails.html', form=form, bio=bio, location=location,
-                            github=github, instagram=instagram, username=username, firstname=firstname, 
+                            github=github, instagram=instagram, username=username, firstname=firstname,
                             lastname=lastname, figure=figure, following=following,
                             followers=followers, twitter=twitter,
                             appreciations=appreciations)
@@ -170,8 +171,8 @@ def somedetails():
       return render_template('somedetails.html', form=form)
     else:
       userinfo = User.query.filter_by(username=session['username']).first()
-      if form.twitter.data >= 1: 
-        userinfo.twitter = form.twitter.data 
+      if form.twitter.data >= 1:
+        userinfo.twitter = form.twitter.data
         db.session.commit()
       if form.instagram.data >= 1:
         userinfo.instagram = form.instagram.data
@@ -199,7 +200,7 @@ def dashboard():
     return redirect(url_for('signin'))
 
   user = User.query.filter_by(username = session['username']).first()
-  upload_folder = '/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s' % session['username']
+  upload_folder = '/Users/Bryans-MacBook-Pro/Desktop/Development/Roadbeam/src/static/accounts/%s' % session['username']
 
   if user is None:
     return redirect(url_for('signin'))
@@ -229,9 +230,9 @@ def dashboard():
           file.save(os.path.join(upload_folder, filename))
           return redirect(url_for('dashboard'))
 
-    
+
     return render_template('dashboard.html', bio=bio, location=location,
-                            github=github, instagram=instagram, username=username, firstname=firstname, 
+                            github=github, instagram=instagram, username=username, firstname=firstname,
                             lastname=lastname, figure=figure, following=following,
                             followers=followers, twitter=twitter,
                             appreciations=appreciations)
@@ -249,7 +250,7 @@ def profileSetup(username, db):
     if response.status_code == 200:
       print url
       filename = randomword(7) + ".jpg"
-      f = open("/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s/%s" % (username, filename), 'wb')
+      f = open("/Users/Bryan/Desktop/Development/roadbeam/src/static/accounts/%s/%s" % (username, filename), 'wb')
       f.write(response.content)
       f.close()
 
@@ -278,8 +279,8 @@ def signup():
 
       session['username'] = newuser.username
 
-      if not os.path.exists("/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s" % session['username']):
-        os.mkdir("/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s" % session['username'])
+      if not os.path.exists("/Users/Bryan/Desktop/Development/roadbeam/src/static/accounts/%s" % session['username']):
+        os.mkdir("/Users/Bryan/Desktop/Development/roadbeam/src/static/accounts/%s" % session['username'])
 
       session['completeprofile'] = newuser.username
 
@@ -344,11 +345,15 @@ def profile(username):
     github = user.github
     bio = user.bio
     location = user.location
+    if 'username' in session:
+        profile_owner = session['username']
+    else:
+        profile_owner = None
 
-    
+
+
     return render_template('profile.html', uploads=uploads, bio=bio, location=location,
-                            github=github, instagram=instagram, username=username, firstname=firstname, 
+                            github=github, instagram=instagram, username=username, firstname=firstname,
                             lastname=lastname, figure=figure, following=following,
-                            followers=followers, twitter=twitter,
+                            followers=followers, twitter=twitter, profile_owner=profile_owner,
                             appreciations=appreciations)
-

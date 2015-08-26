@@ -10,14 +10,14 @@
     <meta name="author" content="">
 
     <title>
-      
+
         Profile &middot; Application theme &middot; Official Bootstrap Themes
-      
+
     </title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
     <link href="http://bootstrap-themes.github.io/application/assets/css/toolkit.css" rel="stylesheet">
-    
+
     <link href="http://bootstrap-themes.github.io/application/assets/css/application.css" rel="stylesheet">
 
     <style>
@@ -28,6 +28,18 @@
         min-width: 100%;
         *width: 100%;
       }
+      #img_container {
+      position:relative;
+      text-align:center;
+    }
+
+      #overlay_button {
+      position:absolute;
+      bottom:10px;
+      right:10px;
+      width:100px;
+      height:30px;
+    }
     </style>
 
   </head>
@@ -389,8 +401,11 @@
 <div class="by alw" data-grid="images">
   {% for image in uploads %}
       {% set thecolumn = randint(1, 4) %}
-        <div>
+        <div id="img_container">
           <img data-width="640" class="{{loop.index}}" data-height="{% if loop.index == thecolumn %}640{% else %}400{% endif %}" data-action="zoom" src="/static/{{image.url}}">
+          {% if image.publisher == profile_owner %}
+          <a href="/delete/{{image.id}}"> <button class="cg fx fp eg k" id="overlay_button"> Delete </button> </a>
+          {% endif %}
         </div>
   {% endfor %}
 </div>
@@ -410,4 +425,3 @@
     </script>
   </body>
 </html>
-
