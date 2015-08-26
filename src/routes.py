@@ -250,7 +250,7 @@ def profileSetup(username, db):
     if response.status_code == 200:
       print url
       filename = randomword(7) + ".jpg"
-      f = open("/Users/Bryan/Desktop/Development/roadbeam/src/static/accounts/%s/%s" % (username, filename), 'wb')
+      f = open("/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s/%s" % (username, filename), 'wb')
       f.write(response.content)
       f.close()
 
@@ -279,8 +279,8 @@ def signup():
 
       session['username'] = newuser.username
 
-      if not os.path.exists("/Users/Bryan/Desktop/Development/roadbeam/src/static/accounts/%s" % session['username']):
-        os.mkdir("/Users/Bryan/Desktop/Development/roadbeam/src/static/accounts/%s" % session['username'])
+      if not os.path.exists("/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s" % session['username']):
+        os.mkdir("/Users/developeraccount/Desktop/Roadbeam/src/static/accounts/%s" % session['username'])
 
       session['completeprofile'] = newuser.username
 
