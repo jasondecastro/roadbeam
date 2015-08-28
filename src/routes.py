@@ -1,7 +1,7 @@
 from src import app
 from flask import url_for, redirect, session, render_template, request, flash
 from forms import SignupForm, SigninForm, CompleteProfileForm
-from models import db, User, Upload
+from models import db, User, Upload, Follow
 import os, os.path, random, requests, string, threading
 from flask import Flask, redirect, request, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -193,6 +193,26 @@ def somedetails():
 
   elif request.method == 'GET':
     return render_template('somedetails.html', form=form)
+
+@app.route('/follow/<username>', methods=['GET', 'POST'])
+def follow(username):
+  if 'username' not in session:
+    return redirect(url_for('signin'))
+
+  follower = User.query.filter_by(username=session['username']).first()
+  
+  try:
+    followed = User.query.filter_by(username=username).first()
+  except:
+    return 'no such user exists ===('
+
+  if Follow.query.filter((Follow.follower_username==session['username']) & (Follow.followed_username==username)).count() >= 1:
+    return 'you can\'t follow the same guy twice dude..'
+  else:
+    add_follower = Follow(username, session['username'], followed.id, follower.id)
+    db.session.add(add_follower)
+    db.session.commit()
+  return redirect('/%s' % username)
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():

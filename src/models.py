@@ -73,3 +73,18 @@ class Upload(db.Model):
         self.title = title.title()
         self.description = description.title()
 
+class Follow(db.Model):
+	__tablename__ = 'followers'
+
+	id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+	follower_username = db.Column(db.String(120), nullable=False)
+	followed_username = db.Column(db.String(120), nullable=False)
+	follower_id = db.Column(db.Integer)
+	followed_id = db.Column(db.Integer)
+
+	def __init__(self, name_of_person_being_followed, name_of_person_following, id_of_person_being_followed, id_of_person_following):
+		self.follower_username = name_of_person_following
+		self.followed_username = name_of_person_being_followed
+		self.follower_id = id_of_person_following
+		self.followed_id = id_of_person_being_followed
+
