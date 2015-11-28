@@ -4,6 +4,7 @@ import random, string
 
 db = SQLAlchemy()
 
+
 class User(db.Model):
 	__tablename__ = 'users'
 	id = db.Column(db.Integer, primary_key=True)
@@ -12,22 +13,26 @@ class User(db.Model):
 	lastname = db.Column(db.String(100))
 	email = db.Column(db.String(120), unique=True)
 	pwdhash = db.Column(db.String(54))
+	verification_code = db.Column(db.String(7))
 	figure = db.Column(db.String(120))
 	twitter = db.Column(db.String(120))
 	instagram = db.Column(db.String(120))
 	github = db.Column(db.String(120))
 	location = db.Column(db.String(120))
-	bio = db.Column(db.String(120))
+	bio = db.Column(db.String(256))
 	followers = db.Column(db.String(120))
 	following = db.Column(db.String(120))
 	appreciations = db.Column(db.String(120))
+	profile_picture = db.Column(db.String(255), nullable=False)
+	cover_picture = db.Column(db.String(255), nullable=False)
 
-	def __init__(self, firstname, lastname, username, email, password):
+	def __init__(self, firstname, lastname, username, password):
 		self.firstname = firstname.title()
 		self.lastname = lastname.title()
 		self.username = username.lower()
-		self.email = email.lower()
+		self.email = 'notverified_%s@roadbeam.com' % random.randint(0,999999)
 		self.set_password(password)
+		self.verification_code = str(random.randint(100000,999999))
 		self.figure = "ch-878-1409-72.hd-180-10.sh-3089-64.lg-3202-82-1408.hr-3278-1394-40"
 		self.twitter = None
 		self.instagram = None
@@ -37,6 +42,8 @@ class User(db.Model):
 		self.followers = 0
 		self.following = 0
 		self.appreciations = 0
+		self.profile_picture = None
+		self.cover_picture = None
 
 	def generate_bio(self):
 		s_nouns = ["A dude", "My mom", "The king", "Some guy", "A cat with rabies", "A sloth", "Your homie", "This cool guy my gardener met yesterday", "Superman"]
@@ -72,6 +79,27 @@ class Upload(db.Model):
         self.publisher = publisher.lower()
         self.title = title.title()
         self.description = description.title()
+
+class Posts(db.Model):
+	__tablename__ = 'posts'
+
+	id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+	first_name = db.Column(db.String(120))
+	last_name = db.Column(db.String(120))
+	poster_username = db.Column(db.String(120))
+	poster_id = db.Column(db.String(120))
+	text_post = db.Column(db.String(340))
+	image_post = db.Column(db.String(340))
+	video_post = db.Column(db.String(340))
+
+	def __init__(self, firstname, lastname, username, usr_id, text, image, video):
+		self.first_name = firstname
+		self.last_name = lastname                                                                                                                                                
+		self.poster_username = username
+		self.poster_id = usr_id
+		self.text_post = text
+		self.image_post = image
+		self.video_post = video
 
 class Follow(db.Model):
 	__tablename__ = 'followers'

@@ -23,7 +23,7 @@
       <div class="flash">{{ message }}</div>
     {% endfor %}
     
-    <form action="{{ url_for('contact') }}" method=post>
+    <form action="/contact" method=post>
       {{ form.hidden_tag() }}
       
       {{ form.name.label }}

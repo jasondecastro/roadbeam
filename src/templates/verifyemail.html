@@ -1,0 +1,201 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      Roadbeam -- Register
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='assets/css/toolkit.css') }}" rel="stylesheet">
+    
+    <link href="{{ url_for('static', filename='assets/css/application.css') }}" rel="stylesheet">
+
+
+
+ <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+/*        background-color: #4696e5;
+        background-image: url("../static/assets/index/css/images/overlay.png"), url("../static/assets/index/css/images/pattern-size1.svg")*/
+      }
+      .close {
+        float: right;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 18px;
+        color: #000000;
+        text-shadow: 0 1px 0 #ffffff;
+        opacity: 0.2;
+        filter: alpha(opacity=20);
+      }
+      .close:hover {
+        color: #000000;
+        text-decoration: none;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        cursor: pointer;
+      }
+      .alert {
+        padding: 8px 35px 8px 14px;
+        margin-bottom: 18px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        background-color: #fcf8e3;
+        border: 1px solid #fbeed5;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        color: #c09853;
+      }
+      .alert-heading {
+        color: inherit;
+      }
+      .alert .close {
+        position: relative;
+        top: -2px;
+        right: -21px;
+        line-height: 18px;
+      }
+      .alert-success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #468847;
+      }
+      .alert-danger,
+      .alert-error {
+        background-color: #f2dede;
+        border-color: #eed3d7;
+        color: #b94a48;
+      }
+      .alert-info {
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+        color: #3a87ad;
+      }
+      .alert-block {
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+      .alert-block > p,
+      .alert-block > ul {
+        margin-bottom: 0;
+      }
+      .alert-block p + p {
+        margin-top: 5px;
+      }
+    </style>
+
+  </head>
+
+
+<body>
+  
+
+
+
+<div class="gb ut">
+  <div class="uv">
+    <div class="alq dj j">
+
+      <a href="/signin.html" class="l amb">
+        <img src="{{ url_for('static', filename='assets/img/brand.png') }}" alt="brand">
+      </a>
+
+      <div class="initial-email">
+
+              <p>Verify your e-mail adresss by entering it below. A verification code will be sent to you shortly after.</p>
+
+        <div class="et" id="emaeel">
+          <input class="form-control" placeholder="johndoe@harvard.edu" id="emailinput">  
+        </div>
+
+        <div class="amb">
+          <button class="cg fm" id="email-button">Send verification code</button>
+        </div>
+      </div>
+
+      <!---------------------------------------------------------------------------->
+
+      <div class="confirmbox">
+        <div class="et" id="checkemail">
+        </div>
+
+        <div class="amb">
+          <p>Are you sure this is your e-mail address?</p>
+          <button class="cg fm" id="yesbutton">Yes</button>
+          <button class="cg fm" id="nobutton">No</button>
+        </div>
+      </div>
+
+      <!---------------------------------------------------------------------------->
+
+      <div class="veri-contain">
+        <p>We have sent you a 6 digit verification code to the e-mail address that you provided. Please enter it below.</p>
+        <div class="et" id="code">
+          <input class="form-control" placeholder="xxxxxx" name="code">
+        </div>
+
+        <div class="amb">
+          <button class="cg fm" id="emailbutton">Confirm E-mail Address</button>
+        </div>
+      </div>
+
+      <footer class="apc">
+        <a href="#" class="dp">Didn't receive anything?</a>
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/toolkit.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/application.js') }}"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+
+      $(".veri-contain").hide();
+      $(".confirmbox").hide();
+
+      $( "#email-button" ).click(function() {
+        $(".initial-email").hide();
+        $( ".confirmbox" ).show();
+        $("#checkemail").html("<input class='form-control' placeholder='"+$('#emailinput').val()+"' name='email' disabled>   ")
+      });
+
+      $( "#yesbutton" ).click(function() {
+        $.ajax({
+          url: '/sendVerificationCode',
+          type: 'POST',
+          data: { "email_to_send_code_to": $("#emailinput").val() },
+          success: function () {},
+          dataType: 'json'
+        });   
+
+        $(location).attr('href','/confirm');
+
+      });
+    </script>
+  </body>
+</html>
+

@@ -103,30 +103,16 @@ stylize any heading tags withing white-panel below
 
       {% if 'username' in session %}
           <div class="navbar-right">
-            <p>hey, {{user}}</p>
+            <p>hey, {{username}}</p>
           </div>
         {% endif %}
-        {% if 'username' not in session %}
-            <form action="{{ url_for('gallery', username=username) }}" method=post id="signin" class="navbar-form navbar-right" role="form">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            {{ form.username(placeholder="Username", class="form-control", id="email")}}                                    
-                        </div>
 
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            {{ form.password(placeholder="Password", class="form-control", id="password")}}                                        
-                        </div>
-
-                          {{ form.submit(class="btn btn-primary", value="Log in")}}
-                   </form>
-                   {% endif %}
     </div>
   </div>
 </nav>
   <div class="container">
   <div class="row">
-    <h2>{{user}}'s gallery</h2>
+    <h2>{{username}}'s gallery</h2>
 
     <p>Best viewed <a href="http://bootsnipp.com/iframe/Zkk0O" target="_blank">full screen</a>
     </p>
@@ -135,7 +121,7 @@ stylize any heading tags withing white-panel below
 
       {% for u in uploads %}
       {% if u.publisher == username %}
-      <article class="white-panel"><img src="{{u.url|replace('static', 'static/accounts/%s' % username)}}" alt="">
+      <article class="white-panel"><img src="../static/{{u.url|replace('static', 'static/accounts/%s' % username)}}" alt="">
         <h4><a href="#">{{ u.title }} </a></h4>
         <p>{{ u.description }}</p>
         {% if user == username %}

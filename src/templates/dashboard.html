@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,15 +9,13 @@
     <meta name="author" content="">
 
     <title>
-      
-        Home &middot; Application theme &middot; Official Bootstrap Themes
-      
+        Roadbeam
     </title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link href="http://bootstrap-themes.github.io/application/assets/css/toolkit.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/toolkit.css') }}" rel="stylesheet">
     
-    <link href="http://bootstrap-themes.github.io/application/assets/css/application.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/application.css') }}" rel="stylesheet">
 
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -27,32 +24,39 @@
         width: 1px;
         min-width: 100%;
         *width: 100%;
+/*        background-color: #4696e5;
+        background-image: url("../static/assets/index/css/images/overlay.png"), url("../static/assets/index/css/images/pattern-size1.svg")*/
       }
+
     </style>
+
   </head>
 
 
-<body class="anf">
-  <div class="anp" id="app-growl"></div>
+<body class="ang">
+  
 
-<nav class="ck pd ot app-navbar">
+
+<div class="anq" id="app-growl"></div>
+
+<nav class="ck pc os app-navbar">
   <div class="by">
-    <div class="os">
-      <button type="button" class="ov collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+    <div class="or">
+      <button type="button" class="ou collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
         <span class="cv">Toggle navigation</span>
-        <span class="ow"></span>
-        <span class="ow"></span>
-        <span class="ow"></span>
+        <span class="ov"></span>
+        <span class="ov"></span>
+        <span class="ov"></span>
       </button>
-      <a class="e" href="http://bootstrap-themes.github.io/application/">
+      <a class="e" href="index.html">
         <img src="http://bootstrap-themes.github.io/application/assets/img/brand-white.png" alt="brand">
       </a>
     </div>
     <div class="f collapse" id="navbar-collapse-main">
 
-        <ul class="nav navbar-nav st">
+        <ul class="nav navbar-nav ss">
           <li class="active">
-            <a href="http://bootstrap-themes.github.io/application/">Home</a>
+            <a href="index.html">Home</a>
           </li>
           <li>
             <a href="/{{username}}">Profile</a>
@@ -60,38 +64,35 @@
           <li>
             <a data-toggle="modal" href="#msgModal">Messages</a>
           </li>
-          <li>
-            <a href="http://bootstrap-themes.github.io/application/docs/">Docs</a>
-          </li>
         </ul>
 
-        <ul class="nav navbar-nav oh ald st">
+        <ul class="nav navbar-nav og ale ss">
           <li >
-            <a class="g" href="http://bootstrap-themes.github.io/application/notifications/">
+            <a class="g" href="notifications/index.html">
               <span class="h ws"></span>
             </a>
           </li>
           <li>
-            <button class="cg fm oy ank" data-toggle="popover">
+            <button class="cg fm ox anl" data-toggle="popover">
               <img class="cu" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
             </button>
           </li>
         </ul>
 
-        <form class="ox oh i" role="search">
+        <form class="ow og i" role="search">
           <div class="et">
             <input type="text" class="form-control" data-action="grow" placeholder="Search">
           </div>
         </form>
 
-        <ul class="nav navbar-nav su sv sw">
-          <li><a href="http://bootstrap-themes.github.io/application/">Home</a></li>
+        <ul class="nav navbar-nav st su sv">
+          <li><a href="index.html">Home</a></li>
           <li><a href="/{{username}}">Profile</a></li>
-          <li><a href="http://bootstrap-themes.github.io/application/notifications/">Notifications</a></li>
+          <li><a href="notifications/index.html">Notifications</a></li>
           <li><a data-toggle="modal" href="#msgModal">Messages</a></li>
-          <li><a href="http://bootstrap-themes.github.io/application/docs/">Docs</a></li>
+          <li><a href="docs/index.html">Docs</a></li>
           <li><a href="#" data-action="growl">Growl</a></li>
-          <li><a href="/signout">Logout</a></li>
+          <li><a href="login/index.html">Logout</a></li>
         </ul>
 
         <ul class="nav navbar-nav hidden">
@@ -111,121 +112,121 @@
         <h4 class="modal-title">Messages</h4>
       </div>
 
-      <div class="modal-body ame js-modalBody">
-        <div class="up">
-          <div class="qp cj ca js-msgGroup">
+      <div class="modal-body amf js-modalBody">
+        <div class="uq">
+          <div class="qo cj ca js-msgGroup">
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+              <div class="qf">
+                <span class="qj">
+                <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>Jacob Thornton</strong> and <strong>1 other</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>Mark Otto</strong> and <strong>3 others</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Brunch sustainable placeat vegan bicycle rights yeah…
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>{{firstname}} {{lastname}}</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Brunch sustainable placeat vegan bicycle rights yeah…
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>Jacob Thornton</strong> and <strong>1 other</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>Mark Otto</strong> and <strong>3 others</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Brunch sustainable placeat vegan bicycle rights yeah…
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>{{firstname}} {{lastname}}</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Brunch sustainable placeat vegan bicycle rights yeah…
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>Jacob Thornton</strong> and <strong>1 other</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Aenean eu leo quam. Pellentesque ornare sem lacinia quam &hellip;
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>Mark Otto</strong> and <strong>3 others</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Brunch sustainable placeat vegan bicycle rights yeah…
                   </div>
                 </div>
               </div>
             </a>
             <a href="#" class="b">
-              <div class="qg">
-                <span class="qk">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
+              <div class="qf">
+                <span class="qj">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
                 </span>
-                <div class="qh">
+                <div class="qg">
                   <strong>{{firstname}} {{lastname}}</strong>
-                  <div class="aoe">
+                  <div class="aof">
                     Brunch sustainable placeat vegan bicycle rights yeah…
                   </div>
                 </div>
@@ -233,39 +234,39 @@
             </a>
           </div>
 
-          <div class="hide ali js-conversation">
-            <ul class="qp aoa">
-              <li class="qg aod alt">
-                <div class="qh">
-                  <div class="aob">
+          <div class="hide alj js-conversation">
+            <ul class="qo aob">
+              <li class="qf aoe alu">
+                <div class="qg">
+                  <div class="aoc">
                     Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
                   </div>
-                  <div class="aoc">
+                  <div class="aod">
                     <small class="dp">
                       <a href="#">{{firstname}} {{lastname}}</a> at 4:20PM
                     </small>
                   </div>
                 </div>
-                <a class="qj" href="#">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
+                <a class="qi" href="#">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
                 </a>
               </li>
 
-              <li class="qg alt">
-                <a class="qk" href="#">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+              <li class="qf alu">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
                 </a>
-                <div class="qh">
-                  <div class="aob">
+                <div class="qg">
+                  <div class="aoc">
                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
                   </div>
-                  <div class="aob">
+                  <div class="aoc">
                    Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
                   </div>
-                  <div class="aob">
+                  <div class="aoc">
                    Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
                   </div>
-                  <div class="aoc">
+                  <div class="aod">
                     <small class="dp">
                       <a href="#">Fat</a> at 4:28PM
                     </small>
@@ -273,18 +274,18 @@
                 </div>
               </li>
 
-              <li class="qg alt">
-                <a class="qk" href="#">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
+              <li class="qf alu">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
                 </a>
-                <div class="qh">
-                  <div class="aob">
+                <div class="qg">
+                  <div class="aoc">
                    Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
                   </div>
-                  <div class="aob">
+                  <div class="aoc">
                    Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                   </div>
-                  <div class="aoc">
+                  <div class="aod">
                     <small class="dp">
                       <a href="#">Mark Otto</a> at 4:20PM
                     </small>
@@ -292,37 +293,37 @@
                 </div>
               </li>
 
-              <li class="qg aod alt">
-                <div class="qh">
-                  <div class="aob">
+              <li class="qf aoe alu">
+                <div class="qg">
+                  <div class="aoc">
                     Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis.
                   </div>
-                  <div class="aoc">
+                  <div class="aod">
                     <small class="dp">
                       <a href="#">{{firstname}} {{lastname}}</a> at 4:20PM
                     </small>
                   </div>
                 </div>
-                <a class="qj" href="#">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
+                <a class="qi" href="#">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
                 </a>
               </li>
 
-              <li class="qg alt">
-                <a class="qk" href="#">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+              <li class="qf alu">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
                 </a>
-                <div class="qh">
-                  <div class="aob">
+                <div class="qg">
+                  <div class="aoc">
                    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
                   </div>
-                  <div class="aob">
+                  <div class="aoc">
                    Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
                   </div>
-                  <div class="aob">
+                  <div class="aoc">
                    Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
                   </div>
-                  <div class="aoc">
+                  <div class="aod">
                     <small class="dp">
                       <a href="#">Fat</a> at 4:28PM
                     </small>
@@ -330,18 +331,18 @@
                 </div>
               </li>
 
-              <li class="qg all">
-                <a class="qk" href="#">
-                  <img class="cu qi" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
+              <li class="qf alm">
+                <a class="qj" href="#">
+                  <img class="cu qh" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
                 </a>
-                <div class="qh">
-                  <div class="aob">
+                <div class="qg">
+                  <div class="aoc">
                    Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
                   </div>
-                  <div class="aob">
+                  <div class="aoc">
                    Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                   </div>
-                  <div class="aoc">
+                  <div class="aod">
                     <small class="dp">
                       <a href="#">Mark Otto</a> at 4:20PM
                     </small>
@@ -356,59 +357,68 @@
   </div>
 </div>
 
-<div class="cd fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
+<div class="cd fade" id="followerModal" tabindex="-1" role="dialog" aria-labelledby="followerModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="d">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Users</h4>
+        <h4 class="modal-title">Followers</h4>
       </div>
 
-      <div class="modal-body ame">
-        <div class="up">
-          <ul class="qp cj ca">
-            <li class="b">
-              <div class="qg">
-                <a class="qk" href="#">
-                  <img class="qi cu" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+      <div class="modal-body amf">
+        <div class="uq">
+          <ul class="qo cj ca">
+
+            <h2 style="padding:15px; ">You have no followers!</h2>
+            <br />
+            <!-- <li class="b">
+              <div class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
                 </a>
-                <div class="qh">
-                  <button class="cg fm fx eg">
-                    <span class="c aok"></span> Follow
+                <div class="qg">
+                  <button class="cg fm fx eg btn-danger-outline">
+                    <span class="c aol "></span> Unfollow
                   </button>
-                  <strong>Jacob Thornton</strong>
-                  <p>@fat - San Francisco</p>
+                  <strong>Jason Decastro</strong>
+                  <p>@jasonrdecastro - New York</p>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cd fade" id="followingModal" tabindex="-1" role="dialog" aria-labelledby="followingModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="d">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Following</h4>
+      </div>
+
+      <div class="modal-body amf">
+        <div class="uq">
+          <ul class="qo cj ca">
+            {% for person in peopleFollowing %}
+            <li class="b">
+              <div class="qf">
+                <a class="qj" href="#">
+                  <img class="qh cu" src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+                </a>
+                <div class="qg">
+                  <button class="cg fm fx eg btn-danger-outline">
+                    <span class="c aol "></span> <a id="unfollow" class="{{ person }}">Unfollow</a>
+                  </button>
+                  <strong>{{ User.query.filter_by(username=person).first().firstname }} {{ User.query.filter_by(username=person).first().lastname }}</strong>
+                  <p>@{{ User.query.filter_by(username=person).first().username }} - New York</p>
                 </div>
               </div>
             </li>
-            <li class="b">
-              <div class="qg">
-                <a class="qk" href="#">
-                  <img class="qi cu" src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
-                </a>
-                <div class="qh">
-                  <button class="cg fm fx eg">
-                    <span class="c aok"></span> Follow
-                  </button>
-                  <strong>{{firstname}} {{lastname}}</strong>
-                  <p>@dhg - Palo Alto</p>
-                </div>
-              </div>
-            </li>
-            <li class="b">
-              <div class="qg">
-                <a class="qk" href="#">
-                  <img class="qi cu" src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
-                </a>
-                <div class="qh">
-                  <button class="cg fm fx eg">
-                    <span class="c aok"></span> Follow
-                  </button>
-                  <strong>Mark Otto</strong>
-                  <p>@mdo - San Francisco</p>
-                </div>
-              </div>
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -417,107 +427,94 @@
 </div>
 
 
-<div class="by ams">
-  <div class="gd">
-    <div class="go">
-      <div class="qw rd aof alt">
-        <div class="qy" style="background-image: url(http://bootstrap-themes.github.io/application/assets/img/iceland.jpg);"></div>
-        <div class="qx dj">
+<div class="by amt">
+  <div class="gc">
+    <div class="gn">
+      <div class="qv rc aog alu">
+        <div class="qx" style="background-image: url(http://bootstrap-themes.github.io/application/assets/img/iceland.jpg);"></div>
+        <div class="qw dj">
           <a href="/{{username}}">
             <img
-              class="aog"
+              class="aoh"
               src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
           </a>
 
-          <h5 class="qz">
-            <a class="akt" href="/{{username}}">{{firstname}} {{lastname}}</a>
+          <h5 class="qy">
+            <a class="aku" href="/{{username}}">{{firstname}} {{lastname}}</a>
           </h5>
 
-          <p class="alt">{{bio}}</p>
+          <p class="alu">{{bio}}</p>
 
-          <ul class="aoh">
-            <li class="aoi">
-              <a href="#userModal" class="akt" data-toggle="modal">
-                Friends
-                <h5 class="alh">12M</h5>
+          <ul class="aoi">
+            <li class="aoj">
+              <a href="#followerModal" class="aku" data-toggle="modal">
+                Followers
+                <h5 class="ali">{{followers}}</h5>
               </a>
             </li>
 
-            <li class="aoi">
-              <a href="#userModal" class="akt" data-toggle="modal">
-                Enemies
-                <h5 class="alh">1</h5>
+            <li class="aoj">
+              <a href="#followingModal" class="aku" data-toggle="modal">
+                Following
+                <h5 class="ali" id="followingCount">{{following}}</h5>
               </a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="qw rd sn sq">
-        <div class="qx">
-          <h5 class="alc">About <small>· <a href="#">Edit</a></small></h5>
-          <ul class="eb tc">
-            <li><span class="dp h xh alk"></span>Went to <a href="#">Oh, Canada</a>
-            <li><span class="dp h ajv alk"></span>Became friends with <a href="#">Obama</a>
-            <li><span class="dp h abu alk"></span>Worked at <a href="#">Github</a>
-            <li><span class="dp h acj alk"></span>Lives in <a href="#">San Francisco, CA</a>
-            <li><span class="dp h ads alk"></span>From <a href="#">Seattle, WA</a>
+      <div class="qv rc sm sp">
+        <div class="qw">
+          <h5 class="ald">About <small>· <a href="#">Edit</a></small></h5>
+          <ul class="eb tb">
+            <li><span class="dp h xh all"></span>Goes to <a href="#">Stanford University</a>
+            <li><span class="dp h ajw all"></span>Became friends with <a href="#">Kelvin</a>
+            <li><span class="dp h abu all"></span>Works at <a href="#">Roadbeam</a>
+            <li><span class="dp h ack all"></span>Lives in <a href="#">San Francisco, CA</a>
+            <li><span class="dp h adt all"></span>From <a href="#">Seattle, WA</a>
           </ul>
         </div>
       </div>
 
-       <div class="qw rd sn sq">
-        <div class="qx">
-          <h5 class="alc">Photos <small>· <a href="#">Edit</a></small></h5>
+       <div class="qv rc sm sp">
+        <div class="qw">
+          <h5 class="ald">Photos <small>· <a href="#">Edit</a></small></h5>
           <div data-grid="images" data-target-height="150">
+            {% for image in uploads %}
             <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_5.jpg">
+              <img data-width="640" data-height="640" data-action="zoom" src="/static/{{image.url}}">
             </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_6.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_7.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_8.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_9.jpg">
-            </div>
-
-            <div>
-              <img data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_10.jpg">
-            </div>
+            {% endfor %}
+           
           </div>
         </div>
       </div>
     </div>
 
-    <div class="ha">
-      <ul class="ca qp anw">
 
-        <li class="qg b amk">
+
+    <div class="gz">
+      <ul class="ca qo anx">
+        <div class="noTextError" style="display:none;">
+          <div class="alert alert-dark alert-dismissible" role="alert">You can't simply post nothing -- what's wrong with you?</div>
+        </div>
+
+        <li class="qf b aml">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Message">
+            <input type="text" class="form-control" id="textPostInput" placeholder="Message">
             <div class="fj">
-              <button type="button" class="cg fm">
-                <span class="h ady"></span>
+              <button type="button" class="cg fm" id="textPost">
+                <span class="h xk"></span>
               </button>
             </div>
           </div>
 
-          <form action="" method=post enctype=multipart/form-data>
+         <!--  <form action="" method=post enctype=multipart/form-data>
               <br>
               <button type="button" id="newupload" style="width:96%;" class="cg fx fp eg k js-newMsg">Upload a New Photo</button>
 
               <p><input class="cg fx fp eg k js-newMsg" id="actualupload" type=file name=file style="display:none" />
-             <!--  <input type="text" name="title" placeholder="title">
-              <input type="text" name="description" placeholder="description"> -->
+            
               <input type=submit id="uploadsubmit" value=Upload style="display:none" />
           </form>
 
@@ -535,202 +532,135 @@
 
                 </div>
             </div>
-          </div>
+          </div> -->
      
 
         </li>
 
-        <li class="qg b amk">
-          <a class="qk" href="#">
+      <div class="postsBox">
+      </div>
+
+        {% for post in posts|reverse %}
+        <li class="qf b aml">
+          <a class="qj" href="#">
             <img
-              class="qi cu"
-              src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
-          </a>
-          <div class="qh">
-            <div class="qo">
-              <small class="eg dp">4 min</small>
-              <h5>{{firstname}} {{lastname}}</h5>
-            </div>
-
-            <p>
-              Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            </p>
-
-            <div class="anx" data-grid="images">
-              <div style="display: none">
-                <img data-action="zoom" data-width="1050" data-height="700" src="http://bootstrap-themes.github.io/application/assets/img/unsplash_1.jpg">
-              </div>
-
-              <div style="display: none">
-                <img data-action="zoom" data-width="640" data-height="640" src="http://bootstrap-themes.github.io/application/assets/img/instagram_1.jpg">
-              </div>
-
-              <div style="display: none">
-                <img data-action="zoom" data-width="640" data-height="640" src="http://bootstrap-themes.github.io/application/assets/img/instagram_13.jpg">
-              </div>
-
-              <div style="display: none">
-                <img data-action="zoom" data-width="1048" data-height="700" src="http://bootstrap-themes.github.io/application/assets/img/unsplash_2.jpg">
-              </div>
-            </div>
-
-            <ul class="qp all">
-              <li class="qg">
-                <a class="qk" href="#">
-                  <img
-                    class="qi cu"
-                    src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
-                </a>
-                <div class="qh">
-                  <strong>Jacon Thornton: </strong>
-                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
-                </div>
-              </li>
-              <li class="qg">
-                <a class="qk" href="#">
-                  <img
-                    class="qi cu"
-                    src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
-                </a>
-                <div class="qh">
-                  <strong>Mark Otto: </strong>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-
-        <li class="qg b amk">
-          <a class="qk" href="#">
-            <img
-              class="qi cu"
+              class="qh cu"
               src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
           </a>
-          <div class="qh">
-            <div class="aob">
-              <div class="qo">
-                <small class="eg dp">12 min</small>
-                <h5>Jacob Thornton</h5>
+          <div class="qg">
+            <div class="aoc">
+              <div class="qn">
+                <small class="eg dp"></small>
+                <h5>{{post.first_name}} {{post.last_name}}</h5>
+              </div>
+              <p>{{post.text_post}}</p>
+            </div>
+          </div>
+        </li>
+        {% endfor %}
+
+        <!-- This is the welcome post every user will get. Dynamify this later -->
+        <li class="qf b aml">
+          <a class="qj" href="#">
+            <img
+              class="qh cu"
+              src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
+          </a>
+          <div class="qg">
+            <div class="aoc">
+              <div class="qn">
+                <small class="eg dp"></small>
+                <h5>Jason Decastro</h5>
               </div>
               <p>
-                Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Welcome to Roadbeam, a new social network designed exclusively for college students. Due to Roadbeam being a completely new and recent platform, you might not find all of your friends already connected. 
+              </p>
+              <p>
+                On the bright side though, you have an early head start to become popular on this website before it blows up.
+              </p>
+              <p>
+                Sounds good, right? Then, what are you waiting for? Share Roadbeam with your friends today!
               </p>
             </div>
           </div>
         </li>
 
-        <li class="qg b amk">
-          <a class="qk" href="#">
-            <img
-              class="qi cu"
-              src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
-          </a>
-          <div class="qh">
-            <div class="qo">
-              <small class="eg dp">34 min</small>
-              <h5>Mark Otto</h5>
-            </div>
 
-            <p>
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-            </p>
-
-            <div class="anx" data-grid="images">
-              <img style="display: none" data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_3.jpg">
-            </div>
-
-            <ul class="qp">
-              <li class="qg">
-                <a class="qk" href="#">
-                  <img
-                    class="qi cu"
-                    src="http://bootstrap-themes.github.io/application/assets/img/avatar-dhg.png">
-                </a>
-                <div class="qh">
-                  <strong>{{firstname}} {{lastname}}: </strong>
-                  Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
+        
       </ul>
     </div>
-    <div class="go">
-      <div class="alert pw alert-dismissible st" role="alert">
+    <div class="gn">
+      <div class="alert pv alert-dismissible ss" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <a class="ps" href="/{{username}}">Visit your profile!</a> Check your self, you aren't looking too good.
+        <a class="pr" href="/{{username}}">Visit your profile!</a> Check your self, you aren't looking too good.
       </div>
 
-      <div class="qw rd alt st">
-        <div class="qx">
-          <h5 class="alc">Sponsored</h5>
+      <div class="qv rc alu ss">
+        <div class="qw">
+          <h5 class="ald">Sponsored</h5>
           <div data-grid="images" data-target-height="150">
-            <img class="qi" data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_2.jpg">
+            <img class="qh" data-width="640" data-height="640" data-action="zoom" src="http://bootstrap-themes.github.io/application/assets/img/instagram_2.jpg">
           </div>
           <p><strong>It might be time to visit Iceland.</strong> Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?</p>
           <button class="cg ts fx">Buy a ticket</button>
         </div>
       </div>
 
-      <div class="qw rd alt st">
-        <div class="qx">
-        <h5 class="alc">Likes <small>· <a href="#">View All</a></small></h5>
-        <ul class="qp anw">
-          <li class="qg all">
-            <a class="qk" href="#">
+      <div class="qv rc alu ss">
+        <div class="qw">
+        <h5 class="ald">Find People <small>· <a href="#">View All</a></small></h5>
+        <ul class="qo anx">
+          <li class="qf alm box-one">
+            <a class="qj" href="#">
               <img
-                class="qi cu"
+                class="qh cu"
                 src="http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg">
             </a>
-            <div class="qh">
-              <strong>Jacob Thornton</strong> @fat
-              <div class="anz">
-                <button class="cg ts fx">
+            <div class="qg">
+              <strong>{{ random_people[0].firstname }} {{ random_people[0].lastname }}</strong> @{{random_people[0].username}}
+              <div class="aoa">
+                <button class="cg ts fx first-follow-button" id="{{random_people[0].username}}">
                   <span class="h vc"></span> Follow</button>
               </div>
             </div>
           </li>
-           <li class="qg">
-            <a class="qk" href="#">
+           <li class="qf box-two">
+            <a class="qj" href="#">
               <img
-                class="qi cu"
+                class="qh cu"
                 src="http://bootstrap-themes.github.io/application/assets/img/avatar-mdo.png">
             </a>
-            <div class="qh">
-              <strong>Mark Otto</strong> @mdo
-              <div class="anz">
-                <button class="cg ts fx">
-                  <span class="h vc"></span> Follow</button></button>
+            <div class="qg">
+              <strong>{{ random_people[1].firstname }} {{ random_people[1].lastname }}</strong> @{{random_people[1].username}}
+              <div class="aoa">
+                <button class="cg ts fx second-follow-button" id="{{random_people[1].username}}">
+                  <span class="h vc"></span> Follow
+                </button>
               </div>
             </div>
           </li>
         </ul>
         </div>
-        <div class="ra">
-          {{firstname}} really likes these nerds, no one knows why though.
+        <div class="qz">
+          <a>Jason Decastro</a> really likes these nerds, no one knows why though.
         </div>
       </div>
 
-      <div class="qw rd aoj">
-        <div class="qx">
-          © 2015 Bootstrap
-
+      <div class="qv rc aok">
+        <div class="qw">
+          © 2015 Roadbeam
+          <br>
           <a href="#">About</a>
           <a href="#">Help</a>
           <a href="#">Terms</a>
           <a href="#">Privacy</a>
           <a href="#">Cookies</a>
-          <a href="#">Ads </a>
+          <a href="#">Advertise </a>
 
-          <a href="#">info</a>
           <a href="#">Brand</a>
           <a href="#">Blog</a>
           <a href="#">Status</a>
-          <a href="#">Apps</a>
           <a href="#">Jobs</a>
-          <a href="#">Advertise</a>
         </div>
       </div>
     </div>
@@ -738,10 +668,10 @@
 </div>
 
 
-    <script src="http://bootstrap-themes.github.io/application/assets/js/jquery.min.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/chart.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/toolkit.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/application.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/toolkit.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/application.js') }}"></script>
     <script>
       $('#imagepreview').hide()
       $('#confirmsection').hide()
@@ -775,6 +705,100 @@
       });
 
     </script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+
+      function getFollowers(boxClassName, buttonClassName){
+        $("#followingCount").html(parseInt($("#followingCount").text()) + 1);
+        $.ajax({
+          url: '/getFollowers',
+          type: 'POST',
+          data: {"username": buttonClassName.id},
+          success: function (data) {
+            console.log(boxClassName)
+            $("." + boxClassName).fadeOut(2200).delay(0);
+            $("." + boxClassName).queue(function(n){
+                $(this).html("\
+              <li class='qf alm "+ boxClassName +"'>\
+                <a class='qj' href='#''>\
+                <img class='qh cu' src='http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg'>\
+                </a>\
+                <div class='qg'>\
+                  <strong>" + data.success[0] + " " + data.success[1] + "</strong> @"+ data.success[2] +"\
+                  <div class='aoa'>\
+                    <button class='cg ts fx "+ buttonClassName +"' id='"+data.success[2]+"''>\
+                      <span class='h vc'></span> Follow</button>\
+                  </div>\
+                </div>\
+              </li>")
+                n();
+            }).fadeIn(0);
+          },
+          dataType: 'json'
+        });  
+      }
+
+      $( ".box-one" ).on('click', 'button.first-follow-button', function() {
+        console.log('clicked number one');
+        $.ajax({
+          url: '/follow/' + this.id,
+          type: 'POST',
+          success: function (data) {
+            var boxClassName = $('button.first-follow-button').parents()[2]
+            getFollowers($(boxClassName).attr('class').split(" ")[2], 'first-follow-button');
+          },
+        });   
+      });
+
+      $( ".box-two" ).on('click', 'button.second-follow-button', function() {
+        console.log('clicked number two');
+        $.ajax({
+          url: '/follow/' + this.id,
+          type: 'POST',
+          success: function (data) {
+            var boxClassName = $('button.second-follow-button').parents()[2]
+            getFollowers($(boxClassName).attr('class').split(" ")[1], 'second-follow-button');
+          },
+        });   
+      });
+
+      $( "#textPost" ).click(function() {
+        console.log('clicked');
+        console.log(this.id);
+        var textValue = $('#textPostInput').val();
+        if (textValue.length >= 1) {
+          $.ajax({
+            url: '/getTextPost',
+            type: 'POST',
+            data: {'text_post': textValue},
+            success: function (data) {
+              $('#textPostInput').val('');
+              $(".postsBox").prepend("<li class='qf b aml'><a class='qj' href=#><img class='qh cu' src=http://bootstrap-themes.github.io/application/assets/img/avatar-fat.jpg></a><div class=qg><div class=aoc><div class=qn><small class='eg dp'></small><h5>{{firstname}} {{lastname}}</h5></div><p>"+textValue+"</p></div></div></li>")
+            },
+            dataType: 'json'
+          });   
+        } else {
+          $(".noTextError").show();
+          $(".noTextError").fadeOut(5000);
+        };
+      });
+
+      $( "#unfollow" ).click(function() {
+        $.ajax({
+          url: '/unfollow/' + this.className,
+          type: 'POST',
+          data: {},
+          success: function (data) {
+            return data.success
+          },
+          dataType: 'json'
+        });   
+      });
+    </script>
   </body>
 </html>
-

@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,11 +19,10 @@
     </title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link href="http://bootstrap-themes.github.io/application/assets/css/toolkit.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/toolkit.css') }}" rel="stylesheet">
     
-    <link href="http://bootstrap-themes.github.io/application/assets/css/application.css" rel="stylesheet">
-
-    <style>
+    <link href="{{ url_for('static', filename='assets/css/application.css') }}" rel="stylesheet">
+ <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
       /* this chunk of css is not part of the toolkit :) */
       body {
@@ -28,7 +30,6 @@
         min-width: 100%;
         *width: 100%;
       }
-
       .close {
         float: right;
         font-size: 20px;
@@ -46,7 +47,6 @@
         filter: alpha(opacity=40);
         cursor: pointer;
       }
-
       .alert {
         padding: 8px 35px 8px 14px;
         margin-bottom: 18px;
@@ -100,16 +100,20 @@
 
 
 <body>
-  <div class="gc us">
-  <div class="uu">
-    <form role="form" class="alp dj j" action="{{ url_for('somedetails') }}" method=post autocomplete="off">
+  
 
-      <a href="http://bootstrap-themes.github.io/application/" class="l ama">
-        <img src="http://bootstrap-themes.github.io/application/assets/img/brand.png" alt="brand">
+
+
+<div class="gb ut">
+  <div class="uv">
+    <form role="form" action="{{ url_for('somedetails') }}" method="post" autocomplete="off" class="alq dj j">
+
+      <a href="/signin.html" class="l amb">
+        <img src="{{ url_for('static', filename='assets/img/brand.png') }}" alt="brand">
       </a>
 
       {{ form.hidden_tag() }}
-
+    
       <div class="et">
         {{ form.twitter(placeholder="Twitter handler (optional)", class="form-control")}}
       </div>
@@ -126,15 +130,15 @@
         {{ form.location(placeholder="Location (optional)", class="form-control")}}
       </div>      
 
-      <div class="et alt">
+      <div class="et alu">
         {{ form.bio(placeholder="How are you feeling right now? (optional)", class="form-control")}}
       </div>
 
-      <div class="ama">
-        {{ form.submit(class="cg fp", value="Continue")}}
+      <div class="amb">
+        <button class="cg fp">Continue</button>
       </div>
 
-      <footer class="apb">
+      <footer class="apc">
         <a href="#" class="dp">Forgot password</a>
       </footer>
     </form>
@@ -142,10 +146,18 @@
 </div>
 
 
-    <script src="http://bootstrap-themes.github.io/application/assets/js/jquery.min.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/chart.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/toolkit.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/application.js"></script>
+
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+        <script>
+      $(document).ready(function() {
+          $('.cg fp').click(function() {
+              $(".gb ut").toggleClass("hide");
+          });
+      });
+    </script>
+    <script src="{{ url_for('static', filename='assets/js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/toolkit.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/application.js') }}"></script>
     <script>
       // execute/clear BS loaders for docs
       $(function(){

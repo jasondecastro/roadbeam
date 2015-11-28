@@ -1,0 +1,115 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Login &middot; Application theme &middot; Official Bootstrap Themes
+      
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='assets/css/toolkit.css') }}" rel="stylesheet">
+    
+    <link href="{{ url_for('static', filename='assets/css/application.css') }}" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+
+  </head>
+
+
+<body>
+  
+
+
+
+<div class="gb ut">
+  <div class="uv">
+    <form role="form" action="{{ url_for('signin') }}" method="post" autocomplete="off" class="alq dj j">
+
+      <a href="/signin.html" class="l amb">
+        <img src="{{ url_for('static', filename='assets/img/brand.png') }}" alt="brand">
+      </a>
+
+      {% for message in form.username.errors %}
+        <div class="alert alert-danger">{{ message }}</div>
+      {% endfor %}
+
+         {% for message in form.email.errors %}
+        <div class="alert alert-danger">{{ message }}</div>
+      {% endfor %}
+       
+      {% for message in form.password.errors %}
+        <div class="alert alert-danger">{{ message }}</div>
+      {% endfor %}
+
+      {{ form.hidden_tag() }}
+
+      <div class="form-group">
+        <table>
+          <tr>
+            <td>{{ form.firstname(placeholder="John", class="form-control")}}</td>
+            <td>{{ form.lastname(placeholder="Doe", class="form-control")}}</td>
+          </tr>
+        </table>
+      </div>
+      <br>
+
+      <div class="et">
+        {{ form.username(placeholder="johndoe", class="form-control")}}
+      </div>
+
+      <div class="et">
+        {{ form.email(placeholder="somebody@someone.com", class="form-control")}}      
+      </div>
+
+      <div class="et alt">
+        {{ form.password(placeholder="password", class="form-control", id="key")}}
+      </div>
+
+      <div class="amb">
+        {{ form.submit(class="cg fp", value="Sign up")}}
+        <a class="cg fm" href="/signin">Already have an account?</a>
+      </div>
+
+      <footer class="apc">
+        <a href="#" class="dp">Forgot password</a>
+      </footer>
+    </form>
+  </div>
+</div>
+
+
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/toolkit.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/application.js') }}"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
+  </body>
+</html>
+

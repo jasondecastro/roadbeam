@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,25 +13,23 @@
     <meta name="author" content="">
 
     <title>
-      
-        Login &middot; Application theme &middot; Official Bootstrap Themes
-      
+      Roadbeam -- Register
     </title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link href="http://bootstrap-themes.github.io/application/assets/css/toolkit.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/toolkit.css') }}" rel="stylesheet">
     
-    <link href="http://bootstrap-themes.github.io/application/assets/css/application.css" rel="stylesheet">
-
-    <style>
+    <link href="{{ url_for('static', filename='assets/css/application.css') }}" rel="stylesheet">
+ <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
       /* this chunk of css is not part of the toolkit :) */
       body {
         width: 1px;
         min-width: 100%;
         *width: 100%;
+/*        background-color: #4696e5;
+        background-image: url("../static/assets/index/css/images/overlay.png"), url("../static/assets/index/css/images/pattern-size1.svg")*/
       }
-
       .close {
         float: right;
         font-size: 20px;
@@ -46,7 +47,6 @@
         filter: alpha(opacity=40);
         cursor: pointer;
       }
-
       .alert {
         padding: 8px 35px 8px 14px;
         margin-bottom: 18px;
@@ -100,20 +100,22 @@
 
 
 <body>
-  <div class="gc us">
-  <div class="uu">
-    <form role="form" class="alp dj j" action="{{ url_for('signup') }}" method=post autocomplete="off">
+  
 
-      <a href="http://bootstrap-themes.github.io/application/" class="l ama">
-        <img src="http://bootstrap-themes.github.io/application/assets/img/brand.png" alt="brand">
+
+
+<div class="gb ut">
+  <div class="uv">
+    <form role="form" action="{{ url_for('signup') }}" method="post" autocomplete="off" class="alq dj j">
+
+      <a href="/signin.html" class="l amb">
+        <img src="{{ url_for('static', filename='assets/img/brand.png') }}" alt="brand">
       </a>
 
       {% for message in form.username.errors %}
         <div class="alert alert-danger">{{ message }}</div>
       {% endfor %}
-      {% for message in form.email.errors %}
-        <div class="alert alert-danger">{{ message }}</div>
-      {% endfor %}
+       
       {% for message in form.password.errors %}
         <div class="alert alert-danger">{{ message }}</div>
       {% endfor %}
@@ -128,27 +130,22 @@
           </tr>
         </table>
       </div>
-
       <br>
 
       <div class="et">
         {{ form.username(placeholder="johndoe", class="form-control")}}
       </div>
 
-      <div class="et">
-        {{ form.email(placeholder="somebody@someone.com", class="form-control")}}
-      </div>
-
-      <div class="et alt">
+      <div class="et alu">
         {{ form.password(placeholder="password", class="form-control", id="key")}}
       </div>
 
-      <div class="ama">
+      <div class="amb">
         {{ form.submit(class="cg fp", value="Sign up")}}
         <a class="cg fm" href="/signin">Already have an account?</a>
       </div>
 
-      <footer class="apb">
+      <footer class="apc">
         <a href="#" class="dp">Forgot password</a>
       </footer>
     </form>
@@ -156,10 +153,10 @@
 </div>
 
 
-    <script src="http://bootstrap-themes.github.io/application/assets/js/jquery.min.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/chart.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/toolkit.js"></script>
-    <script src="http://bootstrap-themes.github.io/application/assets/js/application.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/toolkit.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/application.js') }}"></script>
     <script>
       // execute/clear BS loaders for docs
       $(function(){

@@ -9,7 +9,6 @@ class ContactForm(Form):
   message = TextAreaField("Message",  [validators.Required("Please enter a message.")])
   submit = SubmitField("Send")
 
-
 class CompleteProfileForm(Form):
   twitter = TextField("Twitter")
   instagram = TextField("Instagram")
@@ -47,7 +46,7 @@ class SignupForm(Form):
   username = TextField("Username", [validators.Required("Please enter your username.")])
   firstname = TextField("First name",  [validators.Required("Please enter your first name.")])
   lastname = TextField("Last name",  [validators.Required("Please enter your last name.")])
-  email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("Please enter your email address.")])
+  # email = TextField("Email",  [validators.Required("Please enter your email address."), validators.Email("Please enter your email address.")])
   password = PasswordField('Password', [validators.Required("Please enter a password.")])
   submit = SubmitField("Create account")
 
@@ -58,19 +57,19 @@ class SignupForm(Form):
     if not Form.validate(self):
       return False
 
-    val_email = User.query.filter_by(email = self.email.data.lower()).first()
+    # val_email = User.query.filter_by(email = self.email.data.lower()).first()
     val_user = User.query.filter_by(username = self.username.data.lower()).first()
     print val_user
-    print val_email
-    if val_email and val_user:
-      self.email.errors.append("That email is already taken")
-      self.username.errors.append("That username is already taken")
-      return False
-    elif val_email:
-      print 'exists'
-      self.email.errors.append("That email is already taken")
-      return False
-    elif val_user:
+    # print val_email
+    # if val_email and val_user:
+    #   self.email.errors.append("That email is already taken")
+    #   self.username.errors.append("That username is already taken")
+    #   return False
+    # elif val_email:
+    #   print 'exists'
+    #   self.email.errors.append("That email is already taken")
+    #   return False
+    if val_user:
       print 'exists'
       self.username.errors.append("That username is already taken")
       return False
